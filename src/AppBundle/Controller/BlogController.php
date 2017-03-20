@@ -29,7 +29,7 @@ class BlogController extends Controller
      *
      * @Route("/blog/{slug}", name="blog_show")
      */
-    public function showAction(Request $request, $slug)
+    public function showAction(Request $request)
     {
         return $this->returnResponse($request);
     }
