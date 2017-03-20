@@ -8,3 +8,5 @@ services:
         class: AppBundle\Routing\DbLoader
         tags:
             - { name: routing.loader }
+        arguments:
+            - '@doctrine.orm.default_entity_manager'

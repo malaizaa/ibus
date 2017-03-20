@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Routes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Path</th>
+                <th>Name</th>
+                <th>Controller</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for route in routes %}
+            <tr>
+                <td><a href="{{ path('system_route_show', { 'id': route.id }) }}">{{ route.id }}</a></td>
+                <td>{{ route.path }}</td>
+                <td>{{ route.name }}</td>
+                <td>{{ route.controller }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('system_route_show', { 'id': route.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('system_route_edit', { 'id': route.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('system_route_new') }}">Create a new route</a>
+        </li>
+    </ul>
+{% endblock %}
