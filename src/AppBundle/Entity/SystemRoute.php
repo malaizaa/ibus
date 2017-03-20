@@ -3,12 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * SystemRoute
  *
  * @ORM\Table(name="system_route")
  * @ORM\Entity
+ * @UniqueEntity("name")
  */
 class SystemRoute
 {
@@ -31,7 +33,7 @@ class SystemRoute
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $name;
 

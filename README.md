@@ -1,4 +1,4 @@
-ibus
+ibus - Extend Symfony 3 router with ability to dynamically load routes from database.
 ====
 
 ##Tech stack:##
@@ -6,14 +6,17 @@ ibus
 * Php 7.0.X
 * PHPUnit 6.0.7
 
-## Before start script: ##
+## Before start: ##
 ```
 composer install
 ```
 
-## If you want to add CRUD way created routes to container use this command (if you are running on PROD env): ##
+## Access route manage area: ##
+`/manage/route/`
+
+## For clearing route cache use this console command: ##
 ```
-php bin/console cache:clear --env=prod --no-debug
+php bin/console app:clear-cached-routes
 ```
 
 ##Test run:##
