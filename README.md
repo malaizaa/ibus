@@ -1,7 +1,7 @@
 ibus - Extend Symfony 3 router with ability to dynamically load routes from database.
 ====
 
-##Tech stack:##
+## Tech stack: ##
 * Symfony 3.2.X
 * Php 7.0.X
 * PHPUnit 6.0.7
@@ -19,5 +19,5 @@ composer install
 php bin/console app:clear-cached-routes
 ```
 
-##Test run:##
+## Test run: ##
 `phpunit`
