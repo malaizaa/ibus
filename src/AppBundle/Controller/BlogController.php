@@ -12,20 +12,35 @@ class BlogController extends Controller
     /**
      * Matches /blog exactly
      *
+     * @param $request
+     *
      * @Route("/blog", name="blog_list")
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-        return new Response('Blog list');
+        return $this->returnResponse($request);
     }
 
     /**
      * Matches /blog/*
      *
+     * @param Request $request
+     * @param string $slug
+     *
      * @Route("/blog/{slug}", name="blog_show")
      */
-    public function showAction($slug)
+    public function showAction(Request $request, $slug)
     {
-        return new Response('Blog show');
+        return $this->returnResponse($request);
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return Response
+     */
+    protected function returnResponse(Request $request)
+    {
+        return new Response(sprintf('<html><body>Matched route: <b>%s</b></body></html>', $request->get('_route')));
     }
 }
